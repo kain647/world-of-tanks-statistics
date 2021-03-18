@@ -23,12 +23,27 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     z-index: -1;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 export const Header = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   img {
     width: 450px;
+    height: auto;
+  }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 export const SearchContainer = styled.div`
@@ -71,6 +86,7 @@ export const UsersList = styled.div`
   max-height: 350px;
   overflow-y: auto;
   background-color: #eee;
+  margin-bottom: 25px;
 `;
 export const ListUser = styled.div`
   display: flex;
@@ -82,4 +98,42 @@ export const ListUser = styled.div`
   :hover {
     background-color: #b1b1b1;
   }
+`;
+export const Footer = styled.div`
+  display: flex;
+  padding: 10px;
+  margin-top: auto;
+  user-select: none;
+  svg {
+    width: var(--size);
+    height: var(--size);
+    --size: 24px;
+    color: #d1d5da;
+    :hover {
+      color: #6a737d;
+    }
+  }
+`;
+export const Statistics = styled.div`
+  display: flex;
+`;
+export const Stats = styled.div`
+  display: flex;
+	align-items: center;
+	flex-direction: column;
+`;
+export const NickName = styled.div`
+  display: flex;
+  font-size: 44px;
+  line-height: 46px;
+  font-weight: 700;
+  color: #f9f5e1;
+  max-width: 100%;
+  word-wrap: break-word;
+`;
+export const RegistrationDate = styled.div`
+	display: flex;
+`;
+export const LastTime = styled.div`
+	display: flex;
 `;
