@@ -1,12 +1,18 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiFillGithub } from "react-icons/ai";
 import {
   Container,
   Header,
   SearchContainer,
   UsersList,
-  ListUser
+  ListUser,
+  Footer,
+  Statistics,
+  Stats,
+  NickName,
+  RegistrationDate,
+  LastTime
 } from "./styled";
 
 class Wot extends React.Component {
@@ -15,7 +21,8 @@ class Wot extends React.Component {
     this.state = {
       nickname: "",
       userId: "",
-      users: []
+      users: [],
+      user: null
     };
   }
 
@@ -26,7 +33,9 @@ class Wot extends React.Component {
     const response = await api_url_userId.json();
     console.log(response.data[id]);
 
-    this.setState({});
+    this.setState({
+      user: response.data[id]
+    });
   };
 
   wotStatistics = async () => {
@@ -55,7 +64,7 @@ class Wot extends React.Component {
   };
 
   render() {
-    const { nickname, users } = this.state;
+    const { nickname, users, user } = this.state;
     return (
       <Container>
         <Header>
@@ -85,6 +94,7 @@ class Wot extends React.Component {
               <ListUser
                 onClick={() => {
                   this.getUser(item.account_id);
+                  this.setState({ users: [] });
                 }}
                 key={item.nickname}
               >
@@ -93,9 +103,24 @@ class Wot extends React.Component {
             );
           })}
         </UsersList>
+        {user && (
+          <Statistics>
+            <Stats {...user} key={user.nickname}>
+              <NickName>{user.nickname}</NickName>
+              <RegistrationDate>
+                Registration date:{user.created_at}
+              </RegistrationDate>
+              <LastTime>Last time in battle:{user.last_battle_time}</LastTime>
+            </Stats>
+          </Statistics>
+        )}
+        <Footer>
+          <a href="https://github.com/kain647" target="_blank">
+            <AiFillGithub />
+          </a>
+        </Footer>
       </Container>
     );
   }
 }
-
 export default Wot;
