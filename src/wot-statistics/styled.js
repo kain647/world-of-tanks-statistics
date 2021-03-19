@@ -157,7 +157,9 @@ export const GlobalRating = styled.div`
   flex-direction: column;
   font-size: 32px;
   color: #fff;
+  padding: 0 50px;
   p {
+    align-items: center;
     padding: 0;
     margin: 0;
   }
@@ -173,7 +175,7 @@ export const StatsItem = styled.div`
   align-items: center;
   width: 165px;
   height: 115px;
-  padding: 32px 7px 0;
+  padding: 30px;
   color: #f9f5e1;
 `;
 export const StatsIcon = styled.div`
@@ -187,6 +189,7 @@ export const StatsValue = styled.div`
   font-size: 24px;
   font-weight: 700;
   p {
+    text-align: center;
     padding: 0;
     font-size: 14px;
     text-transform: uppercase;
@@ -196,4 +199,46 @@ export const StatBoxRight = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+`;
+export const AllStats = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px;
+`;
+export const General = styled.div`
+  display: flex;
+  width: 350px;
+  align-items: center;
+  flex-direction: column;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: normal;
+    border-bottom: 1px solid #333335;
+    color: #a29e87;
+    padding: 0 10px;
+    height: 50px;
+  }
+  .value {
+    margin-left: auto;
+  }
+  .title {
+    width: 280px;
+  }
+`;
+export const AllStatsHeader = styled.h4`
+  display: flex;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #e9e2bf;
+  margin-bottom: 23px;
+  padding: 0;
+  margin: 0;
 `;
