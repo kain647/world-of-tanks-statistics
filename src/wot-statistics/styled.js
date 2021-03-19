@@ -119,8 +119,8 @@ export const Statistics = styled.div`
 `;
 export const Stats = styled.div`
   display: flex;
-	align-items: center;
-	flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 `;
 export const NickName = styled.div`
   display: flex;
@@ -130,10 +130,70 @@ export const NickName = styled.div`
   color: #f9f5e1;
   max-width: 100%;
   word-wrap: break-word;
+  margin-bottom: 20px;
 `;
 export const RegistrationDate = styled.div`
-	display: flex;
+  display: flex;
+  color: #eee;
+  span {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 `;
 export const LastTime = styled.div`
-	display: flex;
+  display: flex;
+  color: #eee;
+  span {
+    margin-right: 10px;
+  }
+`;
+export const Rating = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const GlobalRating = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 32px;
+  color: #fff;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+`;
+export const StatBoxLeft = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+`;
+export const StatsItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 165px;
+  height: 115px;
+  padding: 32px 7px 0;
+  color: #f9f5e1;
+`;
+export const StatsIcon = styled.div`
+  display: flex;
+  margin-bottom: 15px;
+`;
+export const StatsValue = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: 700;
+  p {
+    padding: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+`;
+export const StatBoxRight = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 `;
