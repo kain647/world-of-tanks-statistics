@@ -19,7 +19,10 @@ import {
   StatsItem,
   StatsIcon,
   StatsValue,
-  StatBoxRight
+  StatBoxRight,
+  AllStats,
+  General,
+  AllStatsHeader
 } from "./styled";
 
 class Wot extends React.Component {
@@ -121,11 +124,11 @@ class Wot extends React.Component {
             <Stats {...user} key={user.nickname}>
               <NickName>{user.nickname}</NickName>
               <RegistrationDate>
-                <span>Registration date:</span>
+                <span>Дата создания аккаунта игрока:</span>
                 {timeRegistration}
               </RegistrationDate>
               <LastTime>
-                <span>Last time in battle:</span>
+                <span>Время последнего боя:</span>
                 {lastTimeBattle}
               </LastTime>
               <Rating>
@@ -136,7 +139,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.wins}
-                      <p>Wins</p>
+                      <p>ПОБЕДЫ</p>
                     </StatsValue>
                   </StatsItem>
                   <StatsItem>
@@ -145,7 +148,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.battles}
-                      <p>All Battles</p>
+                      <p>БОИ</p>
                     </StatsValue>
                   </StatsItem>
                   <StatsItem>
@@ -154,7 +157,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.hits}
-                      <p>All Hits</p>
+                      <p>ПОПАДАНИЯ</p>
                     </StatsValue>
                   </StatsItem>
                   <StatsItem>
@@ -163,7 +166,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.avg_damage_assisted}
-                      <p>Avg Damage</p>
+                      <p>СРЕДНИЙ УРОН</p>
                     </StatsValue>
                   </StatsItem>
                 </StatBoxLeft>
@@ -172,7 +175,7 @@ class Wot extends React.Component {
                     src={`https://ru-wotp.wgcdn.co/static/5.82.1_d15c27/wotp_static/img/user_profile/frontend/scss/img/rating-ribbon.png`}
                   />
                   {user.global_rating}
-                  <p>Global Rating</p>
+                  <p>Личный рейтинг</p>
                 </GlobalRating>
                 <StatBoxRight>
                   <StatsItem>
@@ -181,7 +184,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.battle_avg_xp}
-                      <p>Battle Avg Xp</p>
+                      <p>СРЕДНИЙ ОПЫТ ЗА БОЙ</p>
                     </StatsValue>
                   </StatsItem>
                   <StatsItem>
@@ -190,7 +193,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.max_xp}
-                      <p>Max Xp</p>
+                      <p>МАКСИМАЛЬНЫЙ ОПЫТ ЗА БОЙ</p>
                     </StatsValue>
                   </StatsItem>
                   <StatsItem>
@@ -199,7 +202,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.max_frags}
-                      <p>Max Frags</p>
+                      <p>МАКСИМУМ УНИЧТОЖЕНО ЗА БОЙ</p>
                     </StatsValue>
                   </StatsItem>
                   <StatsItem>
@@ -208,11 +211,228 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.avg_damage_blocked}
-                      <p>Damage Blocked</p>
+                      <p>Pаблокированный бронёй урон</p>
                     </StatsValue>
                   </StatsItem>
                 </StatBoxRight>
               </Rating>
+              <AllStats>
+                <General>
+                  <AllStatsHeader>Общие параметры</AllStatsHeader>
+                  <ul>
+                    <li>
+                      <span className={"title"}>Бои</span>
+                      <span className={"value"}>
+                        {user.statistics.all.battles}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Победы</span>
+                      <span className={"value"}>
+                        {user.statistics.all.wins}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Поражения</span>
+                      <span className={"value"}>
+                        {user.statistics.all.losses}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Выжил в боях</span>
+                      <span className={"value"}>
+                        {user.statistics.all.survived_battles}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество поваленных деревьев
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.trees_cut}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Очки захвата базы</span>
+                      <span className={"value"}>
+                        {user.statistics.all.capture_points}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Очки защиты базы</span>
+                      <span className={"value"}>
+                        {user.statistics.all.dropped_capture_points}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Нанесено повреждений</span>
+                      <span className={"value"}>
+                        {user.statistics.all.damage_dealt}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Получено урона</span>
+                      <span className={"value"}>
+                        {user.statistics.all.damage_received}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество полученных прямых попаданий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.direct_hits_received}
+                      </span>
+                    </li>
+                  </ul>
+                </General>
+                <General>
+                  <AllStatsHeader>Средние показатели за бой</AllStatsHeader>
+                  <ul>
+                    <li>
+                      <span className={"title"}>Количество пробитий</span>
+                      <span className={"value"}>
+                        {user.statistics.all.piercings}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество полученных пробитий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.piercings_received}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Произведено выстрелов</span>
+                      <span className={"value"}>
+                        {user.statistics.all.shots}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Обнаружено противников</span>
+                      <span className={"value"}>
+                        {user.statistics.all.spotted}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Урон по оглушённым вами целям
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.stun_assisted_damage}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество оглушений, причинённых экипажу противника
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.stun_number}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Выжил в боях</span>
+                      <span className={"value"}>
+                        {user.statistics.all.survived_battles}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Проведено боев в клане</span>
+                      <span className={"value"}>
+                        {user.statistics.clan.battles}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Получено урона</span>
+                      <span className={"value"}>
+                        {user.statistics.all.damage_received}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество полученных прямых попаданий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.direct_hits_received}
+                      </span>
+                    </li>
+                  </ul>
+                </General>
+                <General>
+                  <AllStatsHeader>Рекордные показатели</AllStatsHeader>
+                  <ul>
+                    <li>
+                      <span className={"title"}>Ничьи</span>
+                      <span className={"value"}>
+                        {user.statistics.all.draws}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество нанесённых осколочно-фугасных попаданий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.explosion_hits}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество полученных осколочно-фугасных попаданий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.explosion_hits_received}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Уничтожено техники</span>
+                      <span className={"value"}>
+                        {user.statistics.all.frags}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Процент попаданий</span>
+                      <span className={"value"}>
+                        {user.statistics.all.hits_percents}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Ничьи</span>
+                      <span className={"value"}>
+                        {user.statistics.all.draws}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество нанесённых осколочно-фугасных попаданий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.explosion_hits}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>
+                        Количество полученных осколочно-фугасных попаданий
+                      </span>
+                      <span className={"value"}>
+                        {user.statistics.all.explosion_hits_received}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Уничтожено техники</span>
+                      <span className={"value"}>
+                        {user.statistics.all.frags}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Процент попаданий</span>
+                      <span className={"value"}>
+                        {user.statistics.all.hits_percents}
+                      </span>
+                    </li>
+                  </ul>
+                </General>
+              </AllStats>
             </Stats>
           </Statistics>
         )}
