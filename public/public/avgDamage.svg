@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
+    <path data-name="Damage Per Battle"
+          d="M20.8 12H20l2.4-4.5L20 3h.8L24 7.5zM18 9v.2l-2 .8V6l2 .8V7a1 1 0 0 1 0 2zm-7-5l2-4h4l-2 4h-4zm3 6H8V6h6v4zm-5 6H5l2-4h4zM5 9V7a1 1 0 0 1 1-1h1v4H6a1 1 0 0 1-1-1zm-1.8 3L0 7.5 3.2 3H4L1.6 7.5 4 12h-.8zM16 10h-1V6h1v4z"
+          fill="#f9f5e1" fill-rule="evenodd"/>
+</svg>
