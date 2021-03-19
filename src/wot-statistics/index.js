@@ -12,7 +12,14 @@ import {
   Stats,
   NickName,
   RegistrationDate,
-  LastTime
+  LastTime,
+  Rating,
+  GlobalRating,
+  StatBoxLeft,
+  StatsItem,
+  StatsIcon,
+  StatsValue,
+  StatBoxRight
 } from "./styled";
 
 class Wot extends React.Component {
@@ -65,6 +72,12 @@ class Wot extends React.Component {
 
   render() {
     const { nickname, users, user } = this.state;
+    const timeRegistration = user
+      ? new Date(user.created_at * 1000).toLocaleString()
+      : "";
+    const lastTimeBattle = user
+      ? new Date(user.last_battle_time * 1000).toLocaleString()
+      : "";
     return (
       <Container>
         <Header>
@@ -82,7 +95,7 @@ class Wot extends React.Component {
             <AiOutlineCloseCircle
               className={"Close"}
               onClick={() => {
-                this.setState({ nickname: "", users: [] });
+                this.setState({ nickname: "", users: [], user: "" });
               }}
             />
           )}
@@ -108,9 +121,98 @@ class Wot extends React.Component {
             <Stats {...user} key={user.nickname}>
               <NickName>{user.nickname}</NickName>
               <RegistrationDate>
-                Registration date:{user.created_at}
+                <span>Registration date:</span>
+                {timeRegistration}
               </RegistrationDate>
-              <LastTime>Last time in battle:{user.last_battle_time}</LastTime>
+              <LastTime>
+                <span>Last time in battle:</span>
+                {lastTimeBattle}
+              </LastTime>
+              <Rating>
+                <StatBoxLeft>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/flag.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.wins}
+                      <p>Wins</p>
+                    </StatsValue>
+                  </StatsItem>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/battle.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.battles}
+                      <p>All Battles</p>
+                    </StatsValue>
+                  </StatsItem>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/hits.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.hits}
+                      <p>All Hits</p>
+                    </StatsValue>
+                  </StatsItem>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/avgDamage.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.avg_damage_assisted}
+                      <p>Avg Damage</p>
+                    </StatsValue>
+                  </StatsItem>
+                </StatBoxLeft>
+                <GlobalRating>
+                  <img
+                    src={`https://ru-wotp.wgcdn.co/static/5.82.1_d15c27/wotp_static/img/user_profile/frontend/scss/img/rating-ribbon.png`}
+                  />
+                  {user.global_rating}
+                  <p>Global Rating</p>
+                </GlobalRating>
+                <StatBoxRight>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/avgXp.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.battle_avg_xp}
+                      <p>Battle Avg Xp</p>
+                    </StatsValue>
+                  </StatsItem>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/maxExp.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.max_xp}
+                      <p>Max Xp</p>
+                    </StatsValue>
+                  </StatsItem>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/maxFrags.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.max_frags}
+                      <p>Max Frags</p>
+                    </StatsValue>
+                  </StatsItem>
+                  <StatsItem>
+                    <StatsIcon>
+                      <img src={`public/damageBlocked.svg`} />
+                    </StatsIcon>
+                    <StatsValue>
+                      {user.statistics.all.avg_damage_blocked}
+                      <p>Damage Blocked</p>
+                    </StatsValue>
+                  </StatsItem>
+                </StatBoxRight>
+              </Rating>
             </Stats>
           </Statistics>
         )}
