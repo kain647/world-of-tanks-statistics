@@ -207,7 +207,6 @@ export const AllStats = styled.div`
 `;
 export const General = styled.div`
   display: flex;
-  width: 350px;
   align-items: center;
   flex-direction: column;
   ul {
