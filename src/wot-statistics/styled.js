@@ -22,13 +22,6 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     z-index: -1;
   }
-  @media screen and (max-width: 768px) {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-start;
-  }
 `;
 export const Header = styled.div`
   display: flex;
@@ -76,6 +69,11 @@ export const SearchContainer = styled.div`
     --size: 20px;
     cursor: pointer;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 export const UsersList = styled.div`
   display: flex;
@@ -113,13 +111,17 @@ export const Footer = styled.div`
     }
   }
 `;
-export const Statistics = styled.div`
-  display: flex;
-`;
 export const Stats = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
 `;
 export const NickName = styled.div`
   display: flex;
@@ -149,10 +151,15 @@ export const LastTime = styled.div`
 export const Rating = styled.div`
   display: flex;
   align-items: center;
+  @media screen and (max-width: 768px) {
+	  display: flex;
+	  flex-direction: column;
+  }
 `;
 export const GlobalRating = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   font-size: 32px;
   color: #fff;
@@ -162,8 +169,17 @@ export const GlobalRating = styled.div`
     padding: 0;
     margin: 0;
   }
+  @media screen and (max-width: 768px) {
+    display: flex;
+    text-align: center;
+  }
 `;
 export const StatBoxLeft = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+`;
+export const StatBoxRight = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -194,21 +210,24 @@ export const StatsValue = styled.div`
     text-transform: uppercase;
   }
 `;
-export const StatBoxRight = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-`;
 export const AllStats = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 40px;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const General = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 20px;
+  :last-child {
+    margin-bottom: 0;
+  }
   ul {
     list-style-type: none;
     padding: 0;

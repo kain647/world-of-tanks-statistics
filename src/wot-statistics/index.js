@@ -8,7 +8,6 @@ import {
   UsersList,
   ListUser,
   Footer,
-  Statistics,
   Stats,
   NickName,
   RegistrationDate,
@@ -123,7 +122,6 @@ class Wot extends React.Component {
           })}
         </UsersList>
         {user && (
-          <Statistics>
             <Stats {...user} key={user.nickname}>
               <NickName>{user.nickname}</NickName>
               <RegistrationDate>
@@ -214,7 +212,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.avg_damage_blocked}
-                      <p>Pазблокированный бронёй урон</p>
+                      <p>Средний заблокированный бронёй урон</p>
                     </StatsValue>
                   </StatsItem>
                 </StatBoxRight>
@@ -395,7 +393,6 @@ class Wot extends React.Component {
                 </General>
               </AllStats>
             </Stats>
-          </Statistics>
         )}
         <Footer>
           <a href="https://github.com/kain647" target="_blank">
