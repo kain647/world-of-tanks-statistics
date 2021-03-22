@@ -41,7 +41,7 @@ class Wot extends React.Component {
       `https://api.worldoftanks.ru/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa&account_id=${id}`
     );
     const response = await api_url_userId.json();
-    //console.log(response.data[id]);
+    console.log(response.data[id]);
 
     this.setState({
       user: response.data[id]
@@ -80,6 +80,9 @@ class Wot extends React.Component {
       : "";
     const lastTimeBattle = user
       ? new Date(user.last_battle_time * 1000).toLocaleString()
+      : "";
+    const dateUpdateUser = user
+      ? new Date(user.updated_at * 1000).toLocaleString()
       : "";
     return (
       <Container>
@@ -211,7 +214,7 @@ class Wot extends React.Component {
                     </StatsIcon>
                     <StatsValue>
                       {user.statistics.all.avg_damage_blocked}
-                      <p>Pаблокированный бронёй урон</p>
+                      <p>Pазблокированный бронёй урон</p>
                     </StatsValue>
                   </StatsItem>
                 </StatBoxRight>
@@ -270,20 +273,6 @@ class Wot extends React.Component {
                         {user.statistics.all.damage_dealt}
                       </span>
                     </li>
-                    <li>
-                      <span className={"title"}>Получено урона</span>
-                      <span className={"value"}>
-                        {user.statistics.all.damage_received}
-                      </span>
-                    </li>
-                    <li>
-                      <span className={"title"}>
-                        Количество полученных прямых попаданий
-                      </span>
-                      <span className={"value"}>
-                        {user.statistics.all.direct_hits_received}
-                      </span>
-                    </li>
                   </ul>
                 </General>
                 <General>
@@ -332,21 +321,9 @@ class Wot extends React.Component {
                       </span>
                     </li>
                     <li>
-                      <span className={"title"}>Выжил в боях</span>
-                      <span className={"value"}>
-                        {user.statistics.all.survived_battles}
-                      </span>
-                    </li>
-                    <li>
                       <span className={"title"}>Проведено боев в клане</span>
                       <span className={"value"}>
                         {user.statistics.clan.battles}
-                      </span>
-                    </li>
-                    <li>
-                      <span className={"title"}>Получено урона</span>
-                      <span className={"value"}>
-                        {user.statistics.all.damage_received}
                       </span>
                     </li>
                     <li>
@@ -363,37 +340,9 @@ class Wot extends React.Component {
                   <AllStatsHeader>Рекордные показатели</AllStatsHeader>
                   <ul>
                     <li>
-                      <span className={"title"}>Ничьи</span>
+                      <span className={"title"}>Получено урона</span>
                       <span className={"value"}>
-                        {user.statistics.all.draws}
-                      </span>
-                    </li>
-                    <li>
-                      <span className={"title"}>
-                        Количество нанесённых осколочно-фугасных попаданий
-                      </span>
-                      <span className={"value"}>
-                        {user.statistics.all.explosion_hits}
-                      </span>
-                    </li>
-                    <li>
-                      <span className={"title"}>
-                        Количество полученных осколочно-фугасных попаданий
-                      </span>
-                      <span className={"value"}>
-                        {user.statistics.all.explosion_hits_received}
-                      </span>
-                    </li>
-                    <li>
-                      <span className={"title"}>Уничтожено техники</span>
-                      <span className={"value"}>
-                        {user.statistics.all.frags}
-                      </span>
-                    </li>
-                    <li>
-                      <span className={"title"}>Процент попаданий</span>
-                      <span className={"value"}>
-                        {user.statistics.all.hits_percents}
+                        {user.statistics.all.damage_received}
                       </span>
                     </li>
                     <li>
@@ -428,6 +377,18 @@ class Wot extends React.Component {
                       <span className={"title"}>Процент попаданий</span>
                       <span className={"value"}>
                         {user.statistics.all.hits_percents}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Идентификатор аккаунта игрока</span>
+                      <span className={"value"}>
+                        {user.account_id}
+                      </span>
+                    </li>
+                    <li>
+                      <span className={"title"}>Дата обновления информации об игроке</span>
+                      <span className={"value"}>
+                        {dateUpdateUser}
                       </span>
                     </li>
                   </ul>
