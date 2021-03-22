@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -12,10 +13,8 @@ export const Container = styled.div`
   :before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    height: 100%;
     filter: blur(10px) brightness(0.4);
     background-image: url(public/bg.jpg);
     background-size: cover;
