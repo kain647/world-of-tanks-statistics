@@ -38,7 +38,7 @@ export const Header = styled.div`
     justify-content: center;
   }
 `;
-export const SearchContainer = styled.div`
+export const Search = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
@@ -152,8 +152,8 @@ export const Rating = styled.div`
   display: flex;
   align-items: center;
   @media screen and (max-width: 768px) {
-	  display: flex;
-	  flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 `;
 export const GlobalRating = styled.div`
@@ -258,4 +258,53 @@ export const AllStatsHeader = styled.h4`
   margin-bottom: 23px;
   padding: 0;
   margin: 0;
+`;
+export const DropdownContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+`;
+export const DropdownBox = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px;
+  align-items: center;
+  font-size: 14px;
+  height: 40px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  svg {
+    margin-left: 10px;
+  }
+`;
+export const DropBox = styled.div`
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 1px;
+  padding: 10px;
+  background-color: #dadada;
+  cursor: pointer;
+  :hover {
+    background-color: rgb(177, 177, 177);
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+`;
+export const RegionList = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #fff;
+`;
+export const ContentContainer = styled.div`
+  display: flex;
+`;
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
 `;
