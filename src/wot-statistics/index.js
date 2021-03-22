@@ -41,7 +41,7 @@ class Wot extends React.Component {
       `https://api.worldoftanks.ru/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa&account_id=${id}`
     );
     const response = await api_url_userId.json();
-    console.log(response.data[id]);
+    //console.log(response.data[id]);
 
     this.setState({
       user: response.data[id]
