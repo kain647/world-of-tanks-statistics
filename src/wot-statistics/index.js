@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "./dropdown";
+import SizeSelector from "../dropdown";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineCloseCircle, AiFillGithub } from "react-icons/ai";
 import {
@@ -127,7 +127,27 @@ class Wot extends React.Component {
               })}
             </UsersList>
           </Content>
-          <Dropdown />
+          <SizeSelector
+            options={[
+              {
+                label: "ru",
+                value: 1
+              },
+              {
+                label: "eu",
+                value: 2
+              },
+              {
+                label: "na",
+                value: 3
+              },
+              {
+                label: "asia",
+                value: 4
+              }
+            ]}
+          />
+          {/*<Dropdown />*/}
         </ContentContainer>
         {user && (
           <Stats {...user} key={user.nickname}>
