@@ -2,13 +2,6 @@ import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 import styled from "styled-components";
 
-export const DropdownContainer = styled.div`
-  display: flex;
-  position: relative;
-  width: 100px;
-  height: 40px;
-  align-items: center;
-`;
 export const DropdownButton = styled.div`
   display: flex;
   width: 100%;
@@ -24,21 +17,31 @@ export const DropdownButton = styled.div`
     margin: 0;
   }
 `;
+export const DropdownContainer = styled.div`
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  align-items: center;
+`;
 export const SizeSelector = styled.div`
   display: block;
 	box-sizing: border-box;
   width: 100%;
   top: 0;
   position: absolute;
-  background-color: #ffffffe6;
+  background-color: rgb(218, 218, 218);
   cursor: pointer;
 `;
 export const Option = styled.div`
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
   padding: 10px;
   cursor: pointer;
+  :last-child {
+    border-bottom: 0;
+  }
   :hover {
-    background-color: rgb(177, 177, 177);
+    background-color: #b1b1b1;
   }
 `;
 
