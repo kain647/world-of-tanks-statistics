@@ -1,0 +1,53 @@
+import React from "react";
+import { FaAngleDown } from "react-icons/fa";
+import styled from "styled-components";
+
+export const DropdownContainer = styled.div`
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 40px;
+  align-items: center;
+`;
+export const DropdownButton = styled.div`
+  display: flex;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  opacity: ${({ visible = true }) => (visible ? 1 : 0)};
+  background-color: #ffffffe6;
+  box-sizing: border-box;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: 0;
+  }
+`;
+export const SizeSelector = styled.div`
+  display: block;
+	box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background-color: #ffffffe6;
+  cursor: pointer;
+`;
+export const Option = styled.div`
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  :hover {
+    background-color: rgb(177, 177, 177);
+  }
+`;
+
+export const MainButton = props => {
+  const { label, ...rest } = props;
+  return (
+    <DropdownButton {...rest}>
+      <p>{label}</p>
+      <FaAngleDown />
+    </DropdownButton>
+  );
+};
