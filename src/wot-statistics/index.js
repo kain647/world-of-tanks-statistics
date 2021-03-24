@@ -147,7 +147,6 @@ class Wot extends React.Component {
               }
             ]}
           />
-          {/*<Dropdown />*/}
         </ContentContainer>
         {user && (
           <Stats {...user} key={user.nickname}>
