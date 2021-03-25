@@ -24,7 +24,8 @@ import {
   General,
   AllStatsHeader,
   ContentContainer,
-  Content
+  Content,
+  MenuContainer
 } from "./styled";
 
 class Wot extends React.Component {
@@ -92,6 +93,29 @@ class Wot extends React.Component {
           <img src={`public/wotLogo.svg`} alt="WorldOfTanks" />
         </Header>
         <ContentContainer>
+          <MenuContainer>
+            <p className={"DropText"}>Region selection :</p>
+            <SizeSelector
+                options={[
+                  {
+                    label: "ru",
+                    value: `https://api.worldoftanks.ru/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
+                  },
+                  {
+                    label: "eu",
+                    value: `https://api.worldoftanks.eu/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
+                  },
+                  {
+                    label: "na",
+                    value: `https://api.worldoftanks.com/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
+                  },
+                  {
+                    label: "asia",
+                    value: `https://api.worldoftanks.asia/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
+                  }
+                ]}
+            />
+          </MenuContainer>
           <Content>
             <Search>
               <input
@@ -127,26 +151,6 @@ class Wot extends React.Component {
               })}
             </UsersList>
           </Content>
-          <SizeSelector
-            options={[
-              {
-                label: "ru",
-                value: 1
-              },
-              {
-                label: "eu",
-                value: 2
-              },
-              {
-                label: "na",
-                value: 3
-              },
-              {
-                label: "asia",
-                value: 4
-              }
-            ]}
-          />
         </ContentContainer>
         {user && (
           <Stats {...user} key={user.nickname}>
