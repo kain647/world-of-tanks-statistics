@@ -261,10 +261,27 @@ export const AllStatsHeader = styled.h4`
 `;
 export const ContentContainer = styled.div`
   display: flex;
-	z-index: 1;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
 `;
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+`;
+export const MenuContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+  p {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .DropText {
+    color: #fff;
+    font-weight: 600;
+  }
 `;
