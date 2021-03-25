@@ -20,9 +20,10 @@ export const DropdownButton = styled.div`
 export const DropdownContainer = styled.div`
   display: flex;
   position: relative;
-  width: 100px;
+  width: 100%;
   height: 40px;
   align-items: center;
+  z-index: 1;
 `;
 export const SizeSelector = styled.div`
   display: block;
