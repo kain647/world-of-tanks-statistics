@@ -1,5 +1,5 @@
 import React from "react";
-import SizeSelector from "../dropdown";
+import SelectorRegion from "../dropdown";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineCloseCircle, AiFillGithub } from "react-icons/ai";
 import {
@@ -35,13 +35,16 @@ class Wot extends React.Component {
       nickname: "",
       userId: "",
       users: [],
-      user: null
+      user: null,
+      region: "ru"
     };
   }
 
   getUser = async id => {
+    const region = this.state.region;
+    //console.log(region)
     const api_url_userId = await fetch(
-      `https://api.worldoftanks.ru/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa&account_id=${id}`
+      `https://api.worldoftanks.${region}/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa&account_id=${id}`
     );
     const response = await api_url_userId.json();
     //console.log(response.data[id]);
@@ -52,9 +55,10 @@ class Wot extends React.Component {
   };
 
   wotStatistics = async () => {
+    const region = this.state.region;
     const nickname = this.state.nickname;
     const response = await fetch(
-      `https://api.worldoftanks.ru/wot/account/list/?application_id=e3f27f300bd358faad37dc512d75f7aa&search=${nickname}`
+      `https://api.worldoftanks.${region}/wot/account/list/?application_id=e3f27f300bd358faad37dc512d75f7aa&search=${nickname}`
     ).then(response => response.json());
     //console.log(response);
 
@@ -95,25 +99,26 @@ class Wot extends React.Component {
         <ContentContainer>
           <MenuContainer>
             <p className={"DropText"}>Region selection :</p>
-            <SizeSelector
-                options={[
-                  {
-                    label: "ru",
-                    value: `https://api.worldoftanks.ru/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
-                  },
-                  {
-                    label: "eu",
-                    value: `https://api.worldoftanks.eu/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
-                  },
-                  {
-                    label: "na",
-                    value: `https://api.worldoftanks.com/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
-                  },
-                  {
-                    label: "asia",
-                    value: `https://api.worldoftanks.asia/wot/account/info/?application_id=e3f27f300bd358faad37dc512d75f7aa`
-                  }
-                ]}
+            <SelectorRegion
+              onChange={value => this.setState({ region: value })}
+              options={[
+                {
+                  label: "ru",
+                  value: `ru`
+                },
+                {
+                  label: "eu",
+                  value: `eu`
+                },
+                {
+                  label: "na",
+                  value: `com`
+                },
+                {
+                  label: "asia",
+                  value: `asia`
+                }
+              ]}
             />
           </MenuContainer>
           <Content>
