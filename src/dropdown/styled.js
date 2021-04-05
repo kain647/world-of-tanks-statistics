@@ -25,7 +25,7 @@ export const DropdownContainer = styled.div`
   align-items: center;
   z-index: 1;
 `;
-export const SizeSelector = styled.div`
+export const SelectorRegion = styled.div`
   display: block;
 	box-sizing: border-box;
   width: 100%;
