@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  SizeSelector,
+  SelectorRegion,
   DropdownContainer,
   Option,
   MainButton
@@ -24,6 +24,7 @@ class Dropdown extends Component {
       expanded: false,
       value: item
     });
+    this.props.onChange(item.value)
   };
 
   render() {
@@ -49,7 +50,7 @@ class Dropdown extends Component {
           onClick={this.toggle}
           visible={!expanded}
         />
-        {expanded && <SizeSelector>{renderOptions}</SizeSelector>}
+        {expanded && <SelectorRegion>{renderOptions}</SelectorRegion>}
       </DropdownContainer>
     );
   }
