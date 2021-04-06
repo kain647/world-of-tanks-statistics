@@ -41,6 +41,7 @@ export const Header = styled.div`
 export const Search = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   input {
@@ -284,4 +285,11 @@ export const MenuContainer = styled.div`
     color: #fff;
     font-weight: 600;
   }
+`;
+export const ErrorMessage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f7e7e;
+  font-weight: 700;
 `;
