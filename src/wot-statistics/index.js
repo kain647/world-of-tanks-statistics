@@ -25,7 +25,8 @@ import {
   AllStatsHeader,
   ContentContainer,
   Content,
-  MenuContainer
+  MenuContainer,
+  ErrorMessage
 } from "./styled";
 
 class Wot extends React.Component {
@@ -57,6 +58,11 @@ class Wot extends React.Component {
   wotStatistics = async () => {
     const region = this.state.region;
     const nickname = this.state.nickname;
+
+    if (nickname.length < 3) {
+      return;
+    }
+
     const response = await fetch(
       `https://api.worldoftanks.${region}/wot/account/list/?application_id=e3f27f300bd358faad37dc512d75f7aa&search=${nickname}`
     ).then(response => response.json());
@@ -82,6 +88,7 @@ class Wot extends React.Component {
 
   render() {
     const { nickname, users, user } = this.state;
+    //console.log(nickname, nickname.length)
     const timeRegistration = user
       ? new Date(user.created_at * 1000).toLocaleString()
       : "";
@@ -419,6 +426,11 @@ class Wot extends React.Component {
               </General>
             </AllStats>
           </Stats>
+        )}
+        {nickname.length < 3 && nickname.length !== 0 && (
+          <ErrorMessage>
+            Минимальное количество символов для поиска: 3
+          </ErrorMessage>
         )}
         <Footer>
           <a href="https://github.com/kain647" target="_blank">
