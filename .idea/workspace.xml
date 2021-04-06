@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9fb921d1-53f6-42f2-8343-1b0d087244f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dropdown/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dropdown/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dropdown/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dropdown/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wot-statistics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wot-statistics/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wot-statistics/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wot-statistics/styled.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\aleks\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="C:\Users\aleks\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\203.7717.59\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -149,7 +149,8 @@
       <workItem from="1616963205829" duration="41000" />
       <workItem from="1617368791750" duration="5000" />
       <workItem from="1617483425440" duration="1000" />
-      <workItem from="1617622158626" duration="2903000" />
+      <workItem from="1617622158626" duration="11460000" />
+      <workItem from="1617701229025" duration="606000" />
     </task>
     <servers />
   </component>
